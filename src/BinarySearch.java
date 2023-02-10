@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-
 public class BinarySearch {
 
 
@@ -22,6 +18,22 @@ public class BinarySearch {
             }
         }
         System.out.println(num+" is not found in the array");
+        return -1;
+    }
+
+    public int bSearchR(int[] arr, int left, int right, int value){
+        int mid = (left+right)/2;
+        if(left < right){
+            if(value == arr[mid]){
+                System.out.println(value+" found at "+ mid +" index");
+                return mid;
+            }else if(value < arr[mid]){
+                return bSearchR(arr,left,mid -1, value );
+            }else{
+                return bSearchR(arr,mid +1,right, value);
+            }
+        }
+        System.out.println(value+" not found");
         return -1;
     }
 

@@ -7,6 +7,8 @@ public class Main {
         BinarySearch search = new BinarySearch();
         search.bSearch(arr, 0);
 
+        search.bSearchR(arr, 0, arr.length, 0);
+
 
 
 
